@@ -2,10 +2,8 @@
 import java.util.Random;
 
 public class AIPlayer {
-
-
+	
 	private static final int N = 3;
-
 	boolean madePlay = false;
 	String X = "X";
 	String O = "O";
@@ -28,8 +26,8 @@ public class AIPlayer {
 				case 3: 
 					madePlay = false;
 					playDownwardDiagonalWin(grid);  
-					if (!playHasBeenMade()){		playUpwardDiagonalWin(grid); 	}
-					if (!playHasBeenMade()){		blockRowWin(grid); 				}	
+					if (!playHasBeenMade()){		playUpwardDiagonalWin(grid); 		}
+					if (!playHasBeenMade()){		blockRowWin(grid); 			}	
 					if (!playHasBeenMade()){		blockColumnWin(grid);			}
 					if (!playHasBeenMade()){		makeDilemmaPlay(grid);			}
 						break;
@@ -37,9 +35,9 @@ public class AIPlayer {
 				case 4:
 					madePlay = false;
 					playRowWin(grid);
-					if (!playHasBeenMade()){			playColumnWin(grid);			}
-					if (!playHasBeenMade()){	playUpwardDiagonalWin(grid);	}
-					if (!playHasBeenMade()){	playDownwardDiagonalWin(grid);	}
+					if (!playHasBeenMade()){	playColumnWin(grid);				}
+					if (!playHasBeenMade()){	playUpwardDiagonalWin(grid);			}
+					if (!playHasBeenMade()){	playDownwardDiagonalWin(grid);			}
 					if (!playHasBeenMade()){	playColumn(grid);				}
 					if (!playHasBeenMade()){	playRow(grid);					}
 						break;
@@ -47,8 +45,8 @@ public class AIPlayer {
 				case 5:
 					madePlay = false;
 					playRowWin(grid);
-					if (!playHasBeenMade()){			playColumnWin(grid);			}
-					if (!playHasBeenMade()){	playArbitrary(grid);			}
+					if (!playHasBeenMade()){	playColumnWin(grid);				}
+					if (!playHasBeenMade()){	playArbitrary(grid);				}
 						break;
 					}		
 				} 
@@ -59,32 +57,31 @@ public class AIPlayer {
 				case 1:
 					madePlay = false;
 					playCenter(grid);
-					if (!playHasBeenMade()){  		playAnyCorner(grid);			}				
+					if (!playHasBeenMade()){  	playAnyCorner(grid);				}				
 					break;
 					
 				case 2:
 					madePlay = false;
 					blockUpDiagonalWin(grid);		
-					if (!playHasBeenMade()){			blockDownDiagonalWin(grid);		}	
-					if (!playHasBeenMade()){	blockColumnWin(grid);			}				
+					if (!playHasBeenMade()){	blockDownDiagonalWin(grid);			}	
+					if (!playHasBeenMade()){	blockColumnWin(grid);				}				
 					if (!playHasBeenMade()){	blockRowWin(grid);				}	
-//					if (!playHasBeenMade()){	playOpenCorner(grid);			}				
 					if (!playHasBeenMade()){	playRow(grid);					}
 					if (!playHasBeenMade()){	playColumn(grid);				}
-					if (!playHasBeenMade()){	playSharedCorner(grid);			}
+					if (!playHasBeenMade()){	playSharedCorner(grid);				}
 					break;	
 					
 				case 3:
 					madePlay = false;
 					playRowWin(grid);		
-					if (!playHasBeenMade()){	playColumnWin(grid);			}
-					if (!playHasBeenMade()){	playDownwardDiagonalWin(grid);  }
-					if (!playHasBeenMade()){	playUpwardDiagonalWin(grid); 	}
-					if (!playHasBeenMade()){	blockColumnWin(grid); 			}
+					if (!playHasBeenMade()){	playColumnWin(grid);				}
+					if (!playHasBeenMade()){	playDownwardDiagonalWin(grid)			}
+					if (!playHasBeenMade()){	playUpwardDiagonalWin(grid); 			}
+					if (!playHasBeenMade()){	blockColumnWin(grid); 				}
 					if (!playHasBeenMade()){	blockRowWin(grid); 				}
-					if (!playHasBeenMade()){	blockUpDiagonalWin(grid);		}
-					if (!playHasBeenMade()){	blockDownDiagonalWin(grid);		}
-					if (!playHasBeenMade()){	playOpenCorner(grid);			}	
+					if (!playHasBeenMade()){	blockUpDiagonalWin(grid);			}
+					if (!playHasBeenMade()){	blockDownDiagonalWin(grid);			}
+					if (!playHasBeenMade()){	playOpenCorner(grid);				}	
 					if (!playHasBeenMade()){	playRow(grid);					}
 					if (!playHasBeenMade()){	playColumn(grid);				}
 					break;	
@@ -92,18 +89,17 @@ public class AIPlayer {
 				case 4:
 					madePlay = false;
 					playRowWin(grid);
-					if (!playHasBeenMade()){	playColumnWin(grid);			}
-					if (!playHasBeenMade()){	playUpwardDiagonalWin(grid);	}
-					if (!playHasBeenMade()){	playDownwardDiagonalWin(grid);	}
-					if (!playHasBeenMade()){	blockColumnWin(grid); 			}
+					if (!playHasBeenMade()){	playColumnWin(grid);				}
+					if (!playHasBeenMade()){	playUpwardDiagonalWin(grid);			}
+					if (!playHasBeenMade()){	playDownwardDiagonalWin(grid);			}
+					if (!playHasBeenMade()){	blockColumnWin(grid); 				}
 					if (!playHasBeenMade()){	blockRowWin(grid); 				}	
-					if (!playHasBeenMade()){	blockUpDiagonalWin(grid);		}
-					if (!playHasBeenMade()){	blockDownDiagonalWin(grid);		}
-					if (!playHasBeenMade()){	playArbitrary(grid);			}
+					if (!playHasBeenMade()){	blockUpDiagonalWin(grid);			}
+					if (!playHasBeenMade()){	blockDownDiagonalWin(grid);			}
+					if (!playHasBeenMade()){	playArbitrary(grid);				}
 					break;
+				}
 			}
-		}
-		
 		return grid;
 	}
 	
@@ -113,21 +109,18 @@ public class AIPlayer {
 			
 					grid[1][1] = O;
 					madePlay = true;
-					System.out.println("I place an 'O' in the center.");
 				}
 			}
 	
 		
 		private void playOppositeCorner(String[][] grid){
 			//Checks for an X in the corner and plays an O in the corner of an opposite diagonal
-	
 			for (int i = 0; i < 2 ; i++ ){
 				for (int j = 0; j < 2 ; j++){
 					if (grid[(i % 2) * 2][(j % 2) * 2] == X){
 						
 						grid[((i+1) % 2) * 2][((j+1) % 2) * 2] = O; //Plays corner opposite X
 						madePlay = true;
-						System.out.println("I place an 'O' in the corner.");
 						break;
 						}
 					}
@@ -137,7 +130,6 @@ public class AIPlayer {
 
 		private void playSharedCorner(String[][] grid){
 			//Plays the corner opposite X
-			
 				Random rand = new Random();
 				int x = rand.nextInt(2) * 2; //Either this gives me 0 or 2.  Places O in random corner
 
@@ -145,13 +137,11 @@ public class AIPlayer {
 					if(grid[i*2][1] == X){
 						grid[i*2][x] = O;
 						madePlay = true;
-						System.out.println("I place an 'O' in the same row or column as X." + x);
 						break;
 					}			
 					else if(grid[1][i*2] == X){
 						grid[x][i*2] = O;
 						madePlay = true;
-						System.out.println("I place an 'O' in the same row or column as X.");
 						break;
 					}	
 				}
@@ -160,28 +150,22 @@ public class AIPlayer {
 		
 		private void blockRowWin(String[][] grid){
 			// Checks for consecutive X's in rows and places an O in the empty space if found
-			System.out.println("Checking for row win.");
 			for (int i = 0; i < N ; i++ ){
 				for (int j = 0; j < N ; j++){
 					if (grid[i][j % N] == grid[i][(j+1) % N] 
 							&& grid[i][j % N] == X
 							&& grid[i][(j+2) % N] == empty){ 
-						
+					
 						grid[i][(j+2) % N] = O;
 						madePlay = true;
-						System.out.println("I will block your row.");
-	
 						break;
 					}
 				}
 			}
 		}
 		
-		
 		private void blockColumnWin(String[][] grid){
 			// Checks for consecutive X's in columns and places an O in the empty space if found
-			
-			System.out.println("Checking for column win");
 			for (int i = 0; i < N ; i++ ){
 				for (int j = 0; j < N ; j++){
 
@@ -191,7 +175,6 @@ public class AIPlayer {
 						
 						grid[(i+2) % N][j% N] = O;
 						madePlay = true;
-						System.out.println("I will block your column.");		
 					}
 				}
 			}
@@ -205,7 +188,6 @@ public class AIPlayer {
 			for (int i = 0; i < 2; i++){
 				for (int j = 0; j < 2; j++){
 					if (grid[i*2][j*2] == O){
-						System.out.println("I will make an offensive play.");
 						if (grid[(i*2+1) % N][j*2] == empty && grid[(i*2+2) % N][j*2] == empty){
 							grid[(i*2+1) % N][j*2] = O;
 							madePlay = true;
@@ -213,8 +195,6 @@ public class AIPlayer {
 						
 						else if (grid[i*2][(j*2+1) % N] == empty && grid[i*2][(j*2+2) % N] == empty){
 							grid[i*2][(j*2+1)%N] = O;
-							System.out.println("I will make an offensive play.");
-
 							madePlay = true;
 						}
 					}
@@ -236,7 +216,6 @@ public class AIPlayer {
 		
 		private void playOpenCorner(String[][] grid){
 			//Plays open corner only if opposite an occupied diagonal
-			
 			if(grid[0][2] != empty && grid[2][0] != empty){
 				
 				if(grid[0][0] == empty && grid[2][2]!= empty){
@@ -298,7 +277,6 @@ public class AIPlayer {
 		
 		
 		private void blockDownDiagonalWin(String[][] grid){
-			System.out.println("Checking for diagonal win");
 			for (int i = 0; i < N ; i++ ){
 				// Check for consecutive X's in diagonals
 					if (grid[i % N][i % N] == grid[(i+1) % N][(i+1) % N] 
@@ -307,15 +285,13 @@ public class AIPlayer {
 						
 						grid[(i+2) % N][(i+2) % N] = O;
 						madePlay = true;
-						System.out.println("I will block your diagonal.");
-	
+
 						break;
 						}
 					}
 				}
 		
 		private void blockUpDiagonalWin(String[][] grid){
-			System.out.println("Checking for diagonal win");
 			for (int i = 0, j = 5; i < N ; i++, j--){
 				if (grid[i % N][j % N] == grid[(i+1) % N][(j-1) % N] 
 						&& grid[i % N][j % N] == X
@@ -323,8 +299,7 @@ public class AIPlayer {
 					// Check for consecutive X's in diagonals
 					grid[(i+2) % N][(j-2) % N] = O;
 					madePlay = true;
-					System.out.println("I will block your diagonal.");
-	
+
 					break;
 					}
 				}
@@ -340,8 +315,7 @@ public class AIPlayer {
 						
 						grid[(i+2) % N][(i+2) % N] = O;
 						madePlay = true;
-						System.out.println("I win.");
-						
+
 				}
 					}
 				}
@@ -354,15 +328,13 @@ public class AIPlayer {
 						
 						grid[(i+2) % 3][(j-2) % 3] = O;
 						madePlay = true;
-						System.out.println("I win.");
-	
+
 						break;
 						}
 					}	
 				}	
 		
 		private void playRowWin(String[][] grid){
-			System.out.println("Checking for row win.");
 			for (int i = 0; i < N ; i++ ){
 				for (int j = 0; j < N ; j++){
 					if (grid[i][j % N] == grid[i][(j+1) % N] 
@@ -371,8 +343,7 @@ public class AIPlayer {
 						// Check for consecutive X's in rows
 						grid[i][(j+2) % N] = O;
 						madePlay = true;
-						System.out.println("I win.");
-	
+
 						break;
 					}
 				}
@@ -380,7 +351,6 @@ public class AIPlayer {
 		}
 			
 		private void playColumnWin(String[][] grid){
-			System.out.println("Checking for row win.");
 			for (int i = 0; i < N ; i++ ){
 				for (int j = 0; j < N ; j++){
 					if (grid[i % N][j % N] == grid[(i+1) % N][j% N] 
@@ -389,8 +359,7 @@ public class AIPlayer {
 						// Check for consecutive O's in columns
 						grid[(i+2) % N][j% N] = O;
 						madePlay = true;
-						System.out.println("I win.");
-	
+
 						break;
 					}
 				}
@@ -406,8 +375,6 @@ public class AIPlayer {
 							&& grid[(i+2) % N][j% N] == O){
 						
 						grid[i % N][j% N] = O;
-						System.out.println("I play a column.");
-
 						madePlay = true;
 					}
 				}
@@ -424,8 +391,7 @@ public class AIPlayer {
 						
 						grid[i][j % N] = O;
 						madePlay = true;
-						System.out.println("I will play a row.");
-	
+
 						break;
 					}
 				}
@@ -438,7 +404,6 @@ public class AIPlayer {
 					if (grid[i][j] == empty && madePlay == false){
 						grid[i][j] = O;
 						madePlay = true;
-						System.out.println("I don't have a good play.");
 
 						break;
 					}
